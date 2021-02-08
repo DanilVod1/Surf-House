@@ -1,0 +1,25 @@
+include ../utils/mixins
+
+block variables
+- var enableBox = false
+
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title #{title}
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1' crossorigin='anonymous')
+    meta(name="description", content=description)
+    block head
+
+  body
+    .container-fluid.first-screen
+      include ../includes/modules/header
+      .cart-container.row.d-flex.align-items-center
+        .left-side.col-6
+          include ../includes/modules/cart
+          include ../includes/modules/box-welcome
+        include ../includes/modules/slide
+
+
